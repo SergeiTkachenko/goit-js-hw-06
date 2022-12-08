@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+  </head>
+  <body>
+    <a href="./index.html">Список ДЗ</a>
+
+    <ul id="ingredients"></ul>
+
+    <script>
+      'use strict';
+
+      const ingredients = [
+        'Potatoes',
+        'Mushrooms',
+        'Garlic',
+        'Tomatos',
+        'Herbs',
+        'Condiments',
+      ];
+
+      const list = document.querySelector('#ingredients');
+
+      for (let i = 0; i < ingredients.length; i += 1) {
+        const item = document.createElement('li');
+        item.textContent = `${ingredients[i]}`;
+        list.append(item);
+        item.classList.add('item');
+      }
+
+      console.log(list.textContent);
+    </script>
+  </body>
+</html>
