@@ -5,12 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5</title>
+    <style>
+      input {
+        display: block;
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
     <a href="./index.html">Список ДЗ</a>
 
+    <input type="text" id="name-input" placeholder="Please enter your name" />
+    <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
+
     <script>
       'use strict';
+
+      const inputEl = document.querySelector('#name-input');
+      const outputEl = document.querySelector('#name-output');
+
+      inputEl.addEventListener('input', () => {
+        outputEl.textContent = inputEl.value;
+        if (outputEl.textContent === '') {
+          outputEl.textContent = 'Anonymous';
+          // чи можна зробити щоб на 24 рядку замість 'Anonymous' якось вписати дефолтне значення??
+        }
+      });
     </script>
   </body>
 </html>

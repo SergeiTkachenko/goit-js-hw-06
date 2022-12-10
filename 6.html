@@ -5,12 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6</title>
+    <style>
+      #validation-input {
+        border: 3px solid #bdbdbd;
+      }
+
+      #validation-input.valid {
+        border-color: #4caf50;
+      }
+
+      #validation-input.invalid {
+        border-color: #f44336;
+      }
+    </style>
   </head>
   <body>
     <a href="./index.html">Список ДЗ</a>
 
+    <input
+      type="text"
+      id="validation-input"
+      data-length="6"
+      placeholder="Please enter 6 symbols"
+    />
+
     <script>
       'use strict';
+
+      const inputEl = document.querySelector('#validation-input');
+
+      inputEl.addEventListener('blur', () => {
+        if (Number(inputEl.dataset.length) === Number(inputEl.value.length)) {
+          inputEl.classList.add('valid');
+        } else {
+          inputEl.classList.add('invalid');
+        }
+      });
+
+      inputEl.addEventListener('focus', () => {
+        inputEl.classList.remove('valid');
+        inputEl.classList.remove('invalid');
+      });
     </script>
   </body>
 </html>

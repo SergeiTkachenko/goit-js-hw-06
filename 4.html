@@ -9,8 +9,32 @@
   <body>
     <a href="./index.html">Список ДЗ</a>
 
+    <div id="counter">
+      <button type="button" data-action="decrement">-1</button>
+      <span id="value">0</span>
+      <button type="button" data-action="increment">+1</button>
+    </div>
+
     <script>
       'use strict';
+
+      const counterValue = document.querySelector('#value');
+      counterValue.textContent = 0;
+
+      const counterDecrement = document.querySelector(
+        'button[data-action="decrement"]'
+      );
+      counterDecrement.addEventListener('click', () => {
+        counterValue.textContent -= 1;
+      });
+
+      const counterIncrement = document.querySelector(
+        'button[data-action="increment"]'
+      );
+
+      counterIncrement.addEventListener('click', () => {
+        counterValue.textContent = Number(counterValue.textContent) + 1;
+      });
     </script>
   </body>
 </html>

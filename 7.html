@@ -9,8 +9,19 @@
   <body>
     <a href="./index.html">Список ДЗ</a>
 
+    <input id="font-size-control" type="range" min="16" max="96" />
+    <br />
+    <span id="text">Abracadabra!</span>
+
     <script>
       'use strict';
+
+      const inputEl = document.querySelector('#font-size-control');
+      const textEl = document.querySelector('#text');
+
+      inputEl.addEventListener('input', () => {
+        textEl.setAttribute('style', `font-size: ${inputEl.value}px`);
+      });
     </script>
   </body>
 </html>
