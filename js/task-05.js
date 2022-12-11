@@ -1,10 +1,10 @@
-const inputEl = document.querySelector("#name-input");
-const outputEl = document.querySelector("#name-output");
+const inputEl = document.querySelector('#name-input');
+const outputEl = document.querySelector('#name-output');
+const defaultText = outputEl.textContent;
 
-inputEl.addEventListener("input", () => {
+inputEl.addEventListener('input', () => {
   outputEl.textContent = inputEl.value;
-  if (outputEl.textContent === "") {
-    outputEl.textContent = "Anonymous";
-    // чи можна зробити щоб на 24 рядку замість 'Anonymous' якось вписати дефолтне значення??
+  if (outputEl.textContent === '') {
+    outputEl.textContent = defaultText;
   }
 });
